@@ -26,12 +26,19 @@
     line-height: 1.5
 
   #site-title
+    //margin: 0
+    //color: var(--white)
+    //font-size: 1.85em
+    font-size: 100px
+    color: var(--black-2)
     margin: 0
-    color: var(--white)
-    font-size: 1.85em
+    transition: font-size: 0.5s
 
-    +minWidth768()
-      font-size: 2.85em
+    +maxWidth900()
+      font-size: 84px
+
+    //+minWidth768()
+    //  font-size: 2.85em
 
   #site-subtitle
     color: var(--light-grey)
