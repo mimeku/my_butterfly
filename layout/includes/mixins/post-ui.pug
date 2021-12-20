@@ -33,7 +33,7 @@ mixin postUI(posts)
                 - let date_type = data_type_updated ? 'updated' : 'date'
                 - let date_icon = data_type_updated ? 'fas fa-history' :'far fa-calendar-alt'
                 - let date_title = data_type_updated ? _p('post.updated') : _p('post.created')
-                i(class=date_icon)
+                
                 span.article-meta-label=date_title
                 time(datetime=date_xml(article[date_type]) title=date_title + ' ' + full_date(article[date_type]))=date(article[date_type], config.date_format)
           if (theme.post_meta.page.categories && article.categories.data.length > 0)
