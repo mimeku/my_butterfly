@@ -24,3 +24,11 @@ if theme.menu
                   if val.split('||')[1]
                     i.fa-fw(class=trim(val.split('||')[1]))
                   span=' '+ lab
+    //- add support for navagition button which not inludes words
+    each value, label in theme.menu_after
+      if typeof value !== 'object'
+        .menus_item
+          a.site-page(href=url_for(trim(value.split('||')[0])))
+            if value.split('||')[1]
+              i.fa-fw(class=trim(value.split('||')[1]))
+            span=' '
