@@ -1,16 +1,35 @@
 #recent-posts
-  & > .recent-post-item:not(:first-child)
-    margin-top: 1rem
+  // add
+  user-select: none
+  display: grid
+  grid-template-columns: 1fr 1fr
+  max-width: 980px
+  margin: auto
 
+  & > .recent-post-item:not(:first-child)
+    //margin-top: 1rem
+    
   & > .recent-post-item
-    display: flex
-    flex-direction: row
-    align-items: center
-    height: 20em
-    border-radius: 12px 8px 8px 12px
-    background: var(--card-bg)
-    box-shadow: var(--card-box-shadow)
-    transition: all .3s
+    //display: flex
+    //flex-direction: row
+    //align-items: center
+    //height: 20em
+    //border-radius: 12px 8px 8px 12px
+    //background: var(--card-bg)
+    //box-shadow: var(--card-box-shadow)
+    //transition: all .3s
+
+    overflow: hidden
+    border-radius: 7px
+    background-color: var(--card-bg)
+    margin-bottom: 21px
+    transition: all 200ms ease
+
+    &:nth-child(2n-1)
+      margin-right: 8px
+    
+    &:nth-child(2n)
+      margin-left: 8px
 
     +maxWidth768()
       border-radius: 12px 12px 8px 8px
@@ -21,6 +40,8 @@
       img.post_bg
         transform: scale(1.1)
 
+    // 删除封面图左右移动
+    /*
     if hexo-config('cover.position') == 'both'
       .left_radius
         border-radius: 8px 0 0 8px
@@ -41,7 +62,8 @@
 
       .right_radius
         order: 2
-        border-radius: 0 8px 8px 0
+        border-radius: 0 8px 8px 0 
+    */
 
     &.ads-wrap
       display: block !important
@@ -49,15 +71,18 @@
 
     .post_cover
       overflow: hidden
-      width: 45%
-      height: 100%
+      //width: 45%
+      //height: 100%
       -webkit-mask-image: -webkit-radial-gradient(white, black)
+      height: 266px
 
       img.post_bg
         width: 100%
         height: 100%
         transition: all .6s
         object-fit: cover
+        filter: brightness(1)
+
 
         &:hover
           transform: scale(1.1)
@@ -65,20 +90,27 @@
     & >.recent-post-info
       display: inline-block
       overflow: hidden
-      padding: 0 40px
+      padding: 32px
       width: 55%
 
       &.no-cover
         width: 100%
 
       & > .article-title
-        @extend .limit-more-line
-        margin-bottom: .3rem
-        color: var(--text-highlight-color)
-        font-size: 1.72em
+        //@extend .limit-more-line
+        //margin-bottom: .3rem
+        //color: var(--text-highlight-color)
+        //font-size: 1.72em
+        //line-height: 1.4
+        //transition: all .2s ease-in-out
+        //-webkit-line-clamp: 2
+        font-size: 24px
         line-height: 1.4
-        transition: all .2s ease-in-out
-        -webkit-line-clamp: 2
+        font-weight: 700
+        letter-spacing: .009em
+        max-height: 7em
+        color: var(--card-title)
+        overflow: hidden
 
         &:hover
           color: $text-hover
@@ -88,7 +120,16 @@
         font-size: 90%
 
         & > .post-meta-date
-          cursor: default
+          //cursor: default
+          font-size: 14px
+          line-height: 1.28577
+          font-weight: 600
+          letter-spacing: -.016em
+          display: flex
+          justify-content: flex-start
+          align-items: center
+          margin-top: 12px
+          color: var(--card-time)
 
         .sticky
           color: $sticky-color
