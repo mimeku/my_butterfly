@@ -613,6 +613,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
+  // 增加对导航栏中切换dark模式开关的绑定
+  // document.getElementById('darkmode').addEventListener('click', rightSideFn.switchDarkMode())
+  // $("#darkmode").on('click', function() {
+  //   if ($("#darkmode").is(':checked')) {
+  //     rightSideFn.switchDarkMode()
+  //   }
+  //   else {
+  //     rightSideFn.switchDarkMode()
+  //   }
+  // })
+
   /**
  * menu
  * 側邊欄sub-menu 展開/收縮

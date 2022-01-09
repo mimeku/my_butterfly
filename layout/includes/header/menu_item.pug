@@ -32,3 +32,8 @@ if theme.menu
             if value.split('||')[1]
               i.fa-fw(class=trim(value.split('||')[1]))
             span=' '
+  //- add toggle to control light-dark mode
+  label.toggle(class="toggle-dark")
+    input(type="checkbox", checked='')#darkmode
+    div.track
+      div.handle
